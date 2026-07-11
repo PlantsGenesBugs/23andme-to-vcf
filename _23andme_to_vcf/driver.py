@@ -10,7 +10,7 @@ REQUIRED_VCF_HEADER_COLUMNS = (
     "FILTER",
     "INFO",
     "FORMAT")
-OPTIONAL_VCF_HEADER_COLUMNS = ("SAMPLE")
+OPTIONAL_VCF_HEADER_COLUMNS = ("SAMPLE",)
 VCF_HEADER_COLUMNS = REQUIRED_VCF_HEADER_COLUMNS + OPTIONAL_VCF_HEADER_COLUMNS
 
 parser = argparse.ArgumentParser(description='Convert 23andMe raw genotype data to a VCF file using a GRCh37 reference genome.')
