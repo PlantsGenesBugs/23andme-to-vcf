@@ -83,16 +83,18 @@ def load_23andme_data(input):
             if line.startswith('#'): continue
             if line.strip():
                 rsid, chrom, pos, genotype = line.strip().split('\t')
+                
                 if chrom == 'MT':
                     chrom = 'M'
                 chrom = 'chr' + chrom
-                if genotype != '--':
-                    skip = False
-                    for x in genotype:
-                        if x not in 'ACTG':
-                            skip = True
-                    if not skip:
-                        yield rsid, chrom, int(pos) - 1, genotype # subtract one because positions are 1-based indices
+                
+                if genotype == '--':
+                    continue
+                
+                if not all(base in 'ACTG' for base in genotype):
+                    continue
+                
+                yield rsid, chrom, int(pos) - 1, genotype # subtract one because positions are 1-based indices
 
 def write_vcf_header(f, vcf_header_columns=VCF_HEADER_COLUMNS):
     f.write(
