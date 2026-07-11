@@ -71,7 +71,7 @@ def get_vcf_records(pos_list, fai, args):
                         yield (chrom, pos, rsid, ref, alts[0], '.', '.', '.', 'GT', '1/1')
                     else:
                         yield (chrom, pos, rsid, ref, alts[0], '.', '.', '.', 'GT', '1/2')
-                        yield (chrom, pos, rsid, ref, alts[1], '.', '.', '.', 'GT', '2/1')
+                
                 elif len(alts) == 1:
                     yield (chrom, pos, rsid, ref, alts[0], '.', '.', '.', 'GT', '0/1')
             elif len(alts) == 1: 
