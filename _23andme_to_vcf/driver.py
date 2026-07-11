@@ -66,16 +66,20 @@ def get_vcf_records(pos_list, fai, args):
             assert ref not in alts
             assert len(alts) <= 2
             if diploid:
-                if len(alts) == 2:
+                if len(alts) == 0:
+                    yield (chrom, pos, rsid, ref, '.', '.', '.', '.', 'GT', '0/0')
+                elif len(alts) == 2:
                     if alts[0] == alts[1]:
                         yield (chrom, pos, rsid, ref, alts[0], '.', '.', '.', 'GT', '1/1')
                     else:
-                        yield (chrom, pos, rsid, ref, ','.join(alts), '.', '.', '.', 'GT', '1/2')
-                
+                        yield (chrom, pos, rsid, ref, ','.join(alts), '.', '.', '.', 'GT', '1/2')               
                 elif len(alts) == 1:
                     yield (chrom, pos, rsid, ref, alts[0], '.', '.', '.', 'GT', '0/1')
-            elif len(alts) == 1: 
-                yield (chrom, pos, rsid, ref, alts[0], '.', '.', '.', 'GT', '1')
+            else: 
+                if len(alts) ==0:
+                    yield(chrom, pos, rsid, ref, '.', '.', '.', '.', 'GT', '0')
+                elif len(alts) == 1: 
+                    yield (chrom, pos, rsid, ref, alts[0], '.', '.', '.', 'GT', '1')
 
 def load_23andme_data(input):
     with open(input) as f:
