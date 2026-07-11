@@ -36,10 +36,10 @@ Point 2 adds information that is useful for analysis and conforms to the defined
 Point 3 has been added since genotypes that are homozygous for REF (i.e. GT 0/0) are shown in the VCF file format spec, even though, in theory, homozygosity for the reference genome isn't necessarily **variant**. It can be argued that the non-variant alleles can be excluded. However, I prefer not losing any information from the original data as it could raise questions down the line (e.g. Were these alleles called at all? Were they deleted?)
 
 ## Output with original code  
-![Code block showing the output VCF file after inputting a 23andMe .txt file and applying original Python function as specified in original repository. Genotypes that are heterozygous return duplicate lines. Genotypes that are homozygous for the reference allele are not rendered](minimal_out_py_v1.tiff)
+![Code block showing the output VCF file after inputting a 23andMe .txt file and applying original Python function as specified in original repository. Genotypes that are heterozygous return duplicate lines. Genotypes that are homozygous for the reference allele are not rendered]([minimal_out_py_v1.tiff)](https://github.com/PlantsGenesBugs/23andme-to-vcf/blob/master/images/minimal_out_py_v1.png)
 
 ## Output with adjusted code  
-![Code block showing the output VCF file after inputting a 23andMe .txt file and applying Python function as updated from original, in the current repository. Genotypes that are heterozygous return only one line. Genotypes that are homozygous for the reference allele are rendered according to the VCF file format spec](https://github.com/PlantsGenesBugs/23andme-to-vcf/blob/master/minimal_out_py_v2.tiff)
+![Code block showing the output VCF file after inputting a 23andMe .txt file and applying Python function as updated from original, in the current repository. Genotypes that are heterozygous return only one line. Genotypes that are homozygous for the reference allele are rendered according to the VCF file format spec](https://github.com/PlantsGenesBugs/23andme-to-vcf/blob/master/images/minimal_out_pyv2.png)
 
 
 
