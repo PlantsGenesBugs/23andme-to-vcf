@@ -39,7 +39,7 @@ Point 3 has been added since genotypes that are homozygous for REF (i.e. GT 0/0)
 <img src="images/minimal_out_py_v1.png" alt="Code block showing the output VCF file after inputting a 23andMe .txt file and applying original Python function as specified in original repository. Genotypes that are heterozygous return duplicate lines. Genotypes that are homozygous for the reference allele are not rendered" width="600">
 
 ## Output with adjusted code 
-<img src="images/minimal_out_py_v2.png" alt="Code block showing the output VCF file after inputting a 23andMe .txt file and applying Python function as updated from original, in the current repository. Genotypes that are heterozygous return only one line. Genotypes that are homozygous for the reference allele are rendered according to the VCF file format spec" width="600">
+<img src="images/minimal_out_pyv2.png" alt="Code block showing the output VCF file after inputting a 23andMe .txt file and applying Python function as updated from original, in the current repository. Genotypes that are heterozygous return only one line. Genotypes that are homozygous for the reference allele are rendered according to the VCF file format spec" width="600">
 
 
 
