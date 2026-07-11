@@ -10,14 +10,14 @@ REQUIRED_VCF_HEADER_COLUMNS = (
     "FILTER",
     "INFO",
     "FORMAT")
-OPTIONAL_VCF_HEADERS_COLUMNS = ("SAMPLE")
-VCF_HEADER_COLUMNS = REQUIRED_HEADER_COLUMNS + OPTIONAL_VCF_HEADER_COLUMNS
+OPTIONAL_VCF_HEADER_COLUMNS = ("SAMPLE")
+VCF_HEADER_COLUMNS = REQUIRED_VCF_HEADER_COLUMNS + OPTIONAL_VCF_HEADER_COLUMNS
 
-parser = argparse.ArgumentParser(description='Process some integers.')
-parser.add_argument('--input', help='A 23andme data file', required=True)
+parser = argparse.ArgumentParser(description='Convert 23andMe raw genotype data to a VCF file using a GRCh37 reference genome.')
+parser.add_argument('--input', help='A 23andme txt file', required=True)
 parser.add_argument('--output', help='Output VCF file', required=True)
 parser.add_argument('--fasta', help='An uncompressed reference genome GRCh37 fasta file', required=True)
-parser.add_argument('--fai', help='The fasta index for for the reference', required=True)
+parser.add_argument('--fai', help='The fasta index (.fai) for the reference genome', required=True)
 
 def load_fai(args):
     index = {}
@@ -102,6 +102,7 @@ def write_vcf_header(f, vcf_header_columns=VCF_HEADER_COLUMNS):
 ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
 #{vcf_header_columns}
 """.format("\t".join(vcf_header_columns))
+    )
 
 def write_vcf(outfile, records):
     with open(outfile, 'w') as f:
