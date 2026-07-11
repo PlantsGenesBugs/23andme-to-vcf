@@ -107,7 +107,7 @@ def write_vcf_header(f, vcf_header_columns=VCF_HEADER_COLUMNS):
 ##reference=GRCh37
 ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
 #{vcf_header_columns}
-""".format("\t".join(vcf_header_columns))
+""".format(vcf_header_columns="\t".join(vcf_header_columns))
     )
 
 def write_vcf(outfile, records):
