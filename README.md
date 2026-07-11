@@ -36,7 +36,7 @@ Point 2 adds information that is useful for analysis and conforms to the defined
 Point 3 has been added since genotypes that are homozygous for REF (i.e. GT 0/0) are shown in the VCF file format spec, even though, in theory, homozygosity for the reference genome isn't necessarily **variant**. It can be argued that the non-variant alleles can be excluded. However, I prefer not losing any information from the original data as it could raise questions down the line (e.g. Were these alleles called at all? Were they deleted?)
 
 ## Output with original code  
-Note: duplicate output for chr1 pos 752721 (rows 2 and 3); no second ALT allele if sample genotype is heterozygous (i.e. SAMPLE column is 1/2); no homozygous alleles (i.e. SAMPLE column showing 0/0)  
+Note: duplicate output for chr1 pos 752721 (rows 7 and 8); no second ALT allele if sample genotype is heterozygous (i.e. SAMPLE column is 1/2); no homozygous alleles (i.e. SAMPLE column showing 0/0)  
 <img src="images/minimal_out_py_v1.png" alt="Code block showing the output VCF file after inputting a 23andMe .txt file and applying original Python function as specified in original repository. Genotypes that are heterozygous return duplicate lines. Genotypes that are homozygous for the reference allele are not rendered" width="600">
 
 ## Output with adjusted code  
