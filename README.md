@@ -21,7 +21,7 @@ docker run -v `pwd`:/app/data davidwb/23andme-to-vcf --input genome_David_Brown_
 
 ------------------------------------------------------------------  
 # UPDATE
-This repository was forked from the original at ![https://github.com/david-wb/23andme-to-vcf](https://github.com/david-wb/23andme-to-vcf). 
+This repository was forked from the original at [https://github.com/david-wb/23andme-to-vcf](https://github.com/david-wb/23andme-to-vcf). 
 
 ## What's different?
 
