@@ -18,3 +18,13 @@ Alternatively, run the public docker image `davidwb/23andme-to-vcf` which alread
 ```
 docker run -v `pwd`:/app/data davidwb/23andme-to-vcf --input genome_David_Brown_v4_Full_20180518133503.txt --output david_23andme.vcf
 ```
+
+------------------------------------------------------------------  
+This repository was forked from the original at ![https://github.com/david-wb/23andme-to-vcf](https://github.com/david-wb/23andme-to-vcf). 
+
+## What's different?
+
+- ...
+- ...
+- ...
+
