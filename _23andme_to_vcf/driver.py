@@ -41,7 +41,7 @@ def get_vcf_records(pos_list, fai, args):
                 assert x in 'ACGT'
 
             if len(genotype) == 1:
-                if ref in genotype:
+                if ref == genotype:
                     return []
                 return [genotype]
 
@@ -51,7 +51,7 @@ def get_vcf_records(pos_list, fai, args):
                 return [genotype[1]]
             if ref == genotype[1]:
                 return [genotype[0]]
-            return [genotype[0], genotype[1]]
+            return sorted(set(genotype))
 
         for (rsid, chrom, pos, genotype) in pos_list:
             start, _, linebases, linewidth = fai[chrom]
