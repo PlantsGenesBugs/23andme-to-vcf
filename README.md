@@ -29,14 +29,14 @@ This repository was forked from the original at [https://github.com/david-wb/23a
 2. Added the ability to list two alleles in the ALT column.  
 3. Added output if the individual's GT is homozygous for the reference (REF) genome.
 
-Point 1 clarifies output. Previously a heterozygous condition would return two lines that would be identical except for the order of the output in the SAMPLE column: one line would have the order 1/2 and the second line would have the order 2/1.
+Point 1 clarifies output. Previously a heterozygous condition would return two lines that would be identical except for the ALT allele, and the order of the output in the SAMPLE column: one line would have the order 1/2 and the second line would have the order 2/1.
 
 Point 2 adds information that is useful for analysis and conforms to the defined VCF file format as described in documentation for VCF v 4.2 (which is the format used in this code). Note that this spec has since been superseded by more recent versions, however the spec still contains information about heterozygous, non-REF alleles in the ALT column.
 
 Point 3 has been added since genotypes that are homozygous for REF (i.e. GT 0/0) are shown in the VCF file format spec, even though, in theory, homozygosity for the reference genome isn't necessarily **variant**. It can be argued that the non-variant alleles can be excluded. However, I prefer not losing any information from the original data as it could raise questions down the line (e.g. Were these alleles called at all? Were they deleted?)
 
 ## Output with original code  
-Note: duplicate output for chr1 pos 752721 (rows 7 and 8); no second ALT allele if sample genotype is heterozygous (i.e. SAMPLE column is 1/2); no homozygous alleles (i.e. SAMPLE column showing 0/0)  
+Note: duplicate output for chr1 pos 752721 (rows 7 and 8); second ALT allele is displayed in the second, duplicated line, and not as a comma-separated value under 'ALT'; no homozygous alleles (i.e. no SAMPLE column showing 0/0)  
 <img src="images/minimal_out_py_v1.png" alt="Code block showing the output VCF file after inputting a 23andMe .txt file and applying original Python function as specified in original repository. Genotypes that are heterozygous return duplicate lines. Genotypes that are homozygous for the reference allele are not rendered" width="600">
 
 ## Output with adjusted code  
