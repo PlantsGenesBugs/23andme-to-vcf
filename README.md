@@ -4,7 +4,7 @@ A simple command-line tool to convert 23andMe raw data files to VCF format.
 
 ------------------------------------------------------------------  
 # UPDATE
-This repository was forked from the original at [https://github.com/david-wb/23andme-to-vcf](https://github.com/david-wb/23andme-to-vcf). 
+This repository was forked from the original at [https://github.com/david-wb/23andme-to-vcf](https://github.com/david-wb/23andme-to-vcf). I have ONLY adapted the script called `driver.py` in the folder `_23andme_to_vcf` - the rest remains unchanged and, more importantly, relates to the original repo. So you won't be able to install the tool as per the original instructions. At least not using the adapted code here!
 
 ## What's different?
 
